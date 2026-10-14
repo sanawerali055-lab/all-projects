@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aptech Admission Form</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- FORM -->
+  <div class="form-container" id="formBox">
+    
+    <div class="form-header">
+      <div class="logo-box">
+        <span class="logo-text">APTECH</span>
+        <span class="logo-sub">COMPUTER EDUCATION</span>
+      </div>
+      <h2>Online Admission Form</h2>
+      <p>Shape your future with industry-leading IT education</p>
+    </div>
+
+    <form id="admissionForm">
+
+      <div class="form-section">
+        <h3 class="section-title">Personal Details</h3>
+        
+        <div class="grid-2">
+          <div class="input-group">
+            <label for="fullname">Full Name <span class="required">*</span></label>
+            <input type="text" id="fullname" name="fullname" placeholder="Student Name" required minlength="3">
+          </div>
+          <div class="input-group">
+            <label for="fathername">Father / Guardian Name <span class="required">*</span></label>
+            <input type="text" id="fathername" name="fathername" placeholder="Father name" required>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="input-group">
+            <label for="email">Email Address <span class="required">*</span></label>
+            <input type="email" id="email" name="email" placeholder="Your Gmail" required>
+          </div>
+          <div class="input-group">
+            <label for="contact">Contact Number <span class="required">*</span></label>
+            <input type="tel" id="contact" name="contact" placeholder="Your Contact" pattern="[0-9]{11}" required>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="input-group">
+            <label for="dob">Date of Birth <span class="required">*</span></label>
+            <input type="date" id="dob" name="dob" required>
+          </div>
+          <div class="input-group">
+            <label>Gender <span class="required">*</span></label>
+            <div class="radio-group">
+              <label class="custom-radio">
+                <input type="radio" name="gender" value="Male" required> Male
+              </label>
+              <label class="custom-radio">
+                <input type="radio" name="gender" value="Female"> Female
+              </label>
+              <label class="custom-radio">
+                <input type="radio" name="gender" value="Other"> Other
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="profile_pic">Profile Picture <span class="required">*</span></label>
+          <input type="file" id="profile_pic" name="profile_pic" accept="image/*" required class="file-input">
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 class="section-title">Course & Class Selection</h3>
+
+        <div class="grid-2">
+          <div class="input-group">
+            <label for="course">Select Course / Class <span class="required">*</span></label>
+            <select id="course" name="course" required>
+              <option value="" disabled selected>-- Select a Course --</option>
+              <option value="ACCP Prime">ACCP Prime (Software Engineering)</option>
+              <option value="DISM">DISM (Diploma in Information System Management)</option>
+              <option value="Web Development">Web Development & Designing</option>
+              <option value="Python Data Science">Python & Data Science</option>
+              <option value="Cyber Security">Cyber Security Essentials</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="pref_time">Preferred Time Slot <span class="required">*</span></label>
+            <input type="time" id="pref_time" name="pref_time" required>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Subjects / Interests <span class="required">*</span></label>
+          <div class="checkbox-group">
+            <label class="custom-checkbox">
+              <input type="checkbox" name="interests[]" value="HTML/CSS"> HTML5 & CSS3
+            </label>
+            <label class="custom-checkbox">
+              <input type="checkbox" name="interests[]" value="JavaScript"> JavaScript & React
+            </label>
+            <label class="custom-checkbox">
+              <input type="checkbox" name="interests[]" value="Database"> SQL & Databases
+            </label>
+            <label class="custom-checkbox">
+              <input type="checkbox" name="interests[]" value="UI/UX"> UI/UX Design
+            </label>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="input-group">
+            <label for="admission_date">Admission Date <span class="required">*</span></label>
+            <input type="date" id="admission_date" name="admission_date" required>
+          </div>
+          <div class="input-group">
+            <label for="portfolio">Website / Portfolio URL</label>
+            <input type="url" id="portfolio" name="portfolio" placeholder="https://yourportfolio.com">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 class="section-title">Address & Account Details</h3>
+
+        <div class="input-group">
+          <label for="address">Full Address <span class="required">*</span></label>
+          <textarea id="address" name="address" rows="3" placeholder="Enter your residential address..." required></textarea>
+        </div>
+
+        <div class="grid-2">
+          <div class="input-group">
+            <label for="city">City <span class="required">*</span></label>
+            <input type="text" id="city" name="city" placeholder="Your City" required>
+          </div>
+          <div class="input-group">
+            <label for="postal_code">Postal Code <span class="required">*</span></label>
+            <input type="text" id="postal_code" name="postal_code" placeholder="City postal code" required>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="password">Account Password <span class="required">*</span></label>
+          <input type="password" id="password" name="password" placeholder="Minimum 8 characters" required minlength="8">
+        </div>
+      </div>
+
+      <div class="form-footer">
+        <div class="btn-group">
+          <button type="submit" class="btn btn-submit">Submit Application</button>
+          <button type="reset" class="btn btn-reset">Reset Form</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- SUCCESS MESSAGE (pehle hide rahega) -->
+  <div class="success-box" id="successBox" style="display: none;">
+    <h1>Your form has been submitted successfully</h1>
+    <button class="btn btn-submit" onclick="location.reload()">Go Back</button>
+  </div>
+
+  <script>
+    document.getElementById("admissionForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // form reload nahi hoga
+      document.getElementById("formBox").style.display = "none";
+      document.getElementById("successBox").style.display = "block";
+    });
+  </script>
+
+</body>
+</html>

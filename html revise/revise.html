@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <table>
+     <thead>
+        <tr>
+            <th>student Id</th>
+            <th>student Name</th>
+            <th>student Batch</th>
+        </tr>
+     </thead>
+
+    <tbody id="tablebody">
+
+    </tbody>
+<script>
+    var tableBody = document.getElementById("tableBody")
+
+    async function datafetch() {
+        var response = await fetch("http://127.0.0.1:5500/db.json")
+        var json = response.json()
+        json.then((data) => {
+            var records = data.students
+            for (let i = 0; i < records.length; i++) {
+                // append Operator
+                tableBody.innerHTML += `<tr>
+                    <td>${records[i].StudentId}</td>
+                    <td>${records[i].StudentName}</td>
+                    <td>${records[i].StudentBatch}</td>
+                </tr>`
+            }
+        })
+    }
+
+    datafetch()
+</script>
+
+
+
+</body>
+</html>
